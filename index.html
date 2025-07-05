@@ -12,6 +12,7 @@
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
     }
+
     body {
       background: linear-gradient(135deg, #000000, #000000);
       color: #ffffff;
@@ -19,20 +20,23 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
       text-align: center;
-      padding: 0 1rem;
+      padding: 2rem 1rem;
     }
+
     .logo {
-      width: 160px;
+      width: 140px;
       height: auto;
       margin-bottom: 1.5rem;
       animation: pulse 2s infinite ease-in-out;
     }
+
     @keyframes pulse {
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.05); }
     }
+
     h1 {
       font-size: 2.8rem;
       font-weight: 700;
@@ -41,18 +45,24 @@
       -webkit-text-fill-color: transparent;
       margin-bottom: 0.75rem;
     }
+
     p {
       font-size: 1.2rem;
       font-weight: 300;
       color: #ccc;
-      margin-bottom: 2rem;
+      margin-bottom: 1.8rem;
+      max-width: 590px;
     }
+
     .buttons {
       display: flex;
       flex-direction: column;
       gap: 1rem;
       margin-bottom: 2rem;
+      width: 100%;
+      max-width: 300px;
     }
+
     .buttons a, button {
       padding: 0.8rem 2rem;
       background: #0080ff;
@@ -65,20 +75,43 @@
       text-decoration: none;
       transition: all 0.3s ease;
     }
+
     .buttons a:hover, button:hover {
       background: #007bff;
     }
+
+    .email-form {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .email-form p {
+      font-size: 1rem;
+      color: #ccc;
+      margin-bottom: 0.6rem;
+    }
+
+    .email-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
     .email-form input[type="email"] {
       padding: 0.75rem 1rem;
       border-radius: 8px;
       border: none;
       outline: none;
       font-size: 1rem;
-      margin-right: 0.5rem;
-      width: 250px;
+      width: 100%;
     }
+
     .email-form button {
       background: #007bff;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      width: 100%;
     }
     footer {
       position: absolute;
@@ -89,12 +122,27 @@
     @media (min-width: 600px) {
       .buttons {
         flex-direction: row;
+        justify-content: center;
+      }
+
+      .email-row {
+        flex-direction: row;
+      }
+
+      .email-form input[type="email"] {
+        flex: 1;
+        width: auto;
+      }
+
+      .email-form button {
+        width: auto;
       }
     }
   </style>
 </head>
 <body>
   <img src="ignitelogo.png" alt="Ignite Flame Logo" class="logo" />
+
   <h1>Ignite Development is Coming Soon</h1>
   <p>Powering the next generation of Discord bots. Stay in the loop.</p>
 
@@ -103,17 +151,17 @@
   </div>
 
   <form class="email-form" action="#" method="POST">
-    <p class="text-gray-300 text-sm mb-2" style="color:#ccc;">
-      Get early access to exclusive features, launch updates, and free premium drops.
-    </p>
-    <input type="email" name="email" placeholder="Enter your email" required />
-
-    <button type="submit">Notify Me</button>
+    <p>Get early access to exclusive features, launch updates, and free premium drops.</p>
+    <div class="email-row">
+      <input type="email" name="email" placeholder="Enter your email" required />
+      <button type="submit">Notify Me</button>
+    </div>
   </form>
 
   <footer>
     &copy; 2025 Ignite Development. All rights reserved.
   </footer>
+
   <script src="disable.js"></script>
 </body>
 </html>
